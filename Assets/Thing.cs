@@ -49,10 +49,12 @@ public class Thing : MonoBehaviour {
 		} else {
 			accelerationToPosition.Sample_X = Convert.ToInt32( accgyro.ScaledAccellX );
 			accelerationToPosition.Sample_Y = Convert.ToInt32( accgyro.ScaledAccellY );
+			accelerationToPosition.position();
 		}
 
 		if (calibrated) {
-			Debug.Log (accelerationToPosition.Sensor_Data);
+			Debug.Log (accelerationToPosition.Sensor_Data[2]);
+			Debug.Log (accelerationToPosition.Sensor_Data[3]);
 		}
 
 

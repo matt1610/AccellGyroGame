@@ -237,7 +237,7 @@ namespace AssemblyCSharp
 		 *****************************************************************************************/
 
 
-		void position()
+		public void position()
 		{
 			byte count2;
 			count2 = 0;

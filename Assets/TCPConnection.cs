@@ -49,11 +49,15 @@ public class TCPConnection : MonoBehaviour {
 	//read message from server
 	public string readSocket() {
 		String result = "";
-		if (theStream.DataAvailable) {
-			Byte[] inStream = new Byte[mySocket.SendBufferSize];
-			theStream.Read(inStream, 0, inStream.Length);
-			result += System.Text.Encoding.UTF8.GetString(inStream);
+
+		if (socketReady) {
+			if (theStream.DataAvailable) {
+				Byte[] inStream = new Byte[mySocket.SendBufferSize];
+				theStream.Read(inStream, 0, inStream.Length);
+				result += System.Text.Encoding.UTF8.GetString(inStream);
+			}
 		}
+
 		return result;
 	}
 	
